@@ -47,15 +47,28 @@
       text-align: center;
       margin-top: 2rem;
     }
-    .cta a {
-      display: inline-block;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-top: 1rem;
+    }
+    input[type="email"] {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 2rem;
+      width: 70%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+    button {
       background: white;
       color: #00c9a7;
       padding: 0.8rem 1.5rem;
       border-radius: 2rem;
-      text-decoration: none;
+      border: none;
       font-weight: bold;
+      cursor: pointer;
     }
     footer {
       text-align: center;
@@ -78,11 +91,13 @@
   <div class="section cta">
     <h2>Join Our Waitlist</h2>
     <p>Be the first to experience VoltAir. Exclusive pre-orders open soon.</p>
-    <a href="#">Join Now</a>
+    <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join Now</button>
+    </form>
   </div>
   <footer>
     &copy; 2025 VoltAir Technologies. All rights reserved.
   </footer>
 </body>
 </html>
-Add index.html for Vercel 
