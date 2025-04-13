@@ -1,24 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/voltair-favicon.png" type="image/png">
-
-  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoltAir | Wireless Charging Revolution</title>
+  <title>VoltAir | Revolutionizing Wireless Charging</title>
+  <link rel="icon" href="assets/images/voltair-favicon.png" type="image/png" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    header img {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: #ccc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1rem;
+    }
+
+    input[type="email"] {
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    button {
+      background-color: #00c6ff;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0090c0;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: #888;
+    }
+  </style>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'G-TDEJXEJE09');
   </script>
 </head>
+<body>
+  <header>
+    <img src="assets/images/voltair-logo.png" alt="VoltAir Logo" />
+  </header>
+
+  <main>
+    <h1>Revolutionizing Wireless Charging</h1>
+    <h2>Join the VoltAir Waitlist</h2>
+    <p>Be the first to experience next-gen wireless power. Sign up now:</p>
+
+    <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+      <input type="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Notify Me</button>
+    </form>
+
+    <footer>
+      &copy; 2025 VoltAir. All rights reserved.
+    </footer>
+  </main>
+</body>
+</html>
