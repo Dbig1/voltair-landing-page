@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoltAir | Revolutionizing Wireless Charging</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  <title>VoltAir | Revolutionizing Wireless Charging</title><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    gtag('config', 'G-TDEJXEJE09');
-  </script>
+  gtag('config', 'G-TDEJXEJE09');
+</script>
   <link rel="icon" href="assets/images/voltair-favicon.png" type="image/png" />
   <style>
     body {
@@ -53,7 +52,7 @@
       margin-top: 1rem;
     }
 
-    input[type="email"] {
+    input[type="text"], input[type="tel"], input[type="email"] {
       padding: 0.75rem 1rem;
       border: none;
       border-radius: 8px;
@@ -84,6 +83,16 @@
     }
   </style>
 
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-TDEJXEJE09');
+  </script>
 </head>
 <body>
   <header>
@@ -95,8 +104,10 @@
     <h2>Join the VoltAir Waitlist</h2>
     <p>Be the first to experience next-gen wireless power. Sign up now:</p>
 
-    <!-- Updated Form Section Here -->
+    <!-- Updated Form Section -->
     <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+      <input type="text" name="fullName" placeholder="Your full name" required />
+      <input type="tel" name="phone" placeholder="Your phone number" required />
       <input type="email" name="email" placeholder="Your email address" required />
       <button type="submit">Notify Me</button>
     </form>
@@ -105,17 +116,5 @@
       &copy; 2025 VoltAir. All rights reserved.
     </footer>
   </main>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-TDEJXEJE09');
-  </script>
-
 </body>
-</html
+</html>
