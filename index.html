@@ -53,8 +53,8 @@
     }
 
     input[type="text"],
-    input[type="tel"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="tel"] {
       padding: 0.75rem 1rem;
       border: none;
       border-radius: 8px;
@@ -78,12 +78,6 @@
       background-color: #0090c0;
     }
 
-    #confirmation {
-      margin-top: 1rem;
-      color: #00c6ff;
-      display: none;
-    }
-
     footer {
       margin-top: 2rem;
       font-size: 0.875rem;
@@ -101,26 +95,16 @@
     <h2>Join the VoltAir Waitlist</h2>
     <p>Be the first to experience next-gen wireless power. Sign up now:</p>
 
-    <form action="https://formspree.io/f/xrbpjkwo" method="POST" onsubmit="showConfirmation(); return true;">
-      <input type="text" name="name" placeholder="Full Name (e.g., Jane Doe)" required pattern="[A-Za-z ]+" />
-      <input type="tel" name="phone" placeholder="Phone Number (WhatsApp preferred)" required pattern="[0-9]{10,15}" />
-      <input type="email" name="email" placeholder="Email Address (we’ll keep it private)" required />
-      <button type="submit">Join the VoltAir Revolution</button>
+    <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+      <input type="text" name="fullname" placeholder="Your full name" required />
+      <input type="email" name="email" placeholder="Your email address" required />
+      <input type="tel" name="phone" placeholder="Your phone number" pattern="[0-9+ ]{7,15}" required />
+      <button type="submit">Join the Waitlist</button>
     </form>
-
-    <p id="confirmation">Thanks for joining VoltAir! You're now on the waitlist.</p>
 
     <footer>
       &copy; 2025 VoltAir. All rights reserved.
     </footer>
   </main>
-
-  <script>
-    function showConfirmation() {
-      setTimeout(() => {
-        document.getElementById('confirmation').style.display = 'block';
-      }, 500);
-    }
-  </script>
 </body>
 </html>
