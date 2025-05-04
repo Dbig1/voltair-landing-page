@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You – VoltAir</title>
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: #ffffff;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      padding: 2rem;
       min-height: 100vh;
       text-align: center;
     }
@@ -26,44 +26,44 @@
     }
 
     .card {
-      background: #fff;
+      background: #1a1a1a;
       padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ff99;
       max-width: 400px;
-      width: 90%;
+      width: 100%;
     }
 
     h1 {
-      color: #0d0d0d;
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
 
     p {
-      color: #555;
       font-size: 1rem;
       margin-bottom: 1.5rem;
+      color: #cfcfcf;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #005eff;
-      color: white;
+      padding: 0.9rem 1.5rem;
+      background-color: #00ff99;
+      color: #000;
       border: none;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #00cc77;
     }
 
     @media (max-width: 480px) {
       h1 {
-        font-size: 1.5rem;
-      }
-
-      .btn {
-        padding: 10px 20px;
+        font-size: 1.6rem;
       }
     }
   </style>
@@ -72,7 +72,7 @@
   <div class="card">
     <img src="https://via.placeholder.com/100x100.png?text=VoltAir" alt="VoltAir Logo" class="logo" />
     <h1>Thank You for Signing Up!</h1>
-    <p>We're thrilled to have you in the VoltAir ecosystem.<br/>You'll be the first to know when we launch.</p>
+    <p>You’re officially on the VoltAir waitlist.<br />We’ll keep you updated!</p>
     <a href="/" class="btn">Back to Homepage</a>
   </div>
 </body>
