@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoltAir - Power the Future</title>
+
   <meta name="description" content="Join VoltAir – the future of wireless charging. Sign up now to be among the first to experience innovation without limits." />
   <meta name="keywords" content="VoltAir, wireless charging, future tech, innovation, power, waitlist" />
+
   <meta name="author" content="VoltAir Team" />
   <link rel="icon" href="favicon.ico" />
   <style>
@@ -18,6 +20,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+    img.logo {
+      width: 120px;
+      margin-bottom: 1rem;
     }
     h1 {
       font-size: 2rem;
@@ -62,21 +68,20 @@
     }
     section {
       margin-top: 2rem;
-      text-align: center;
-    }
-    @media screen and (max-width: 480px) {
-      body {
-        padding: 1rem;
-      }
-      form {
-        padding: 1.5rem;
-      }
+      text-align: center
+  
+
     }
   </style>
 </head>
 <body>
+
+  <img src="logo.png" alt="VoltAir Logo" class="logo" />
+
   <h1>Be the First to Experience VoltAir</h1>
-  
+
+
+
   <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST">
     <input type="text" name="Full Name" placeholder="Your Full Name" required />
     <input type="tel" name="Phone Number" placeholder="Phone Number" required />
@@ -117,4 +122,4 @@
     });
   </script>
 </body>
-</html>
+    </html>
