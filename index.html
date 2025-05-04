@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You – VoltAir</title>
+  <title>VoltAir - Power the Future</title>
   <link rel="icon" href="favicon.ico" />
   <style>
     body {
@@ -15,65 +15,86 @@
       align-items: center;
       justify-content: center;
       padding: 2rem;
-      min-height: 100vh;
-      text-align: center;
     }
-
-    .logo {
-      width: 100px;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px #00ff99;
-      max-width: 400px;
-      width: 100%;
-    }
-
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
     }
-
-    p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      color: #cfcfcf;
+    form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff99;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
     }
-
-    .btn {
-      display: inline-block;
-      padding: 0.9rem 1.5rem;
-      background-color: #00ff99;
-      color: #000;
+    input {
+      padding: 0.8rem;
+      border-radius: 5px;
       border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      font-size: 1rem;
+    }
+    button {
+      background: #00ff99;
+      color: #000;
+      padding: 1rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
       transition: background 0.3s;
     }
-
-    .btn:hover {
-      background-color: #00cc77;
+    button:hover {
+      background: #00cc77;
     }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.6rem;
-      }
+    .success {
+      display: none;
+      margin-top: 1rem;
+      color: #00ff99;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <img src="https://via.placeholder.com/100x100.png?text=VoltAir" alt="VoltAir Logo" class="logo" />
-    <h1>Thank You for Signing Up!</h1>
-    <p>You’re officially on the VoltAir waitlist.<br />We’ll keep you updated!</p>
-    <a href="/" class="btn">Back to Homepage</a>
-  </div>
+  <h1>Be the First to Experience VoltAir</h1>
+  <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST">
+    <input type="text" name="Full Name" placeholder="Your Full Name" required />
+    <input type="tel" name="Phone Number" placeholder="Phone Number" required />
+    <input type="email" name="Email" placeholder="Email Address" required />
+    <button type="submit">Notify Me</button>
+    <div class="success" id="success-message">Thank you! You're on the list.</div>
+  </form>
+
+  <script>
+    const form = document.getElementById('waitlist-form');
+    const success = document.getElementById('success-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (res.ok) {
+          form.reset();
+          success.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Connection error. Please try later.');
+      }
+    });
+  </script>
 </body>
 </html>
