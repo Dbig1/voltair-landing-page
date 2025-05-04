@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoltAir | Revolutionizing Wireless Charging</title><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-TDEJXEJE09');
-</script>
+  <title>VoltAir | Revolutionizing Wireless Charging</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TDEJXEJE09');
+  </script>
   <link rel="icon" href="assets/images/voltair-favicon.png" type="image/png" />
   <style>
     body {
@@ -52,7 +52,9 @@
       margin-top: 1rem;
     }
 
-    input[type="text"], input[type="tel"], input[type="email"] {
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
       padding: 0.75rem 1rem;
       border: none;
       border-radius: 8px;
@@ -76,23 +78,18 @@
       background-color: #0090c0;
     }
 
+    #confirmation {
+      margin-top: 1rem;
+      color: #00c6ff;
+      display: none;
+    }
+
     footer {
       margin-top: 2rem;
       font-size: 0.875rem;
       color: #888;
     }
   </style>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-TDEJXEJE09');
-  </script>
 </head>
 <body>
   <header>
@@ -104,17 +101,26 @@
     <h2>Join the VoltAir Waitlist</h2>
     <p>Be the first to experience next-gen wireless power. Sign up now:</p>
 
-    <!-- Updated Form Section -->
-    <form action="https://formspree.io/f/xrbpjkwo" method="POST">
-      <input type="text" name="fullName" placeholder="Your full name" required />
-      <input type="tel" name="phone" placeholder="Your phone number" required />
-      <input type="email" name="email" placeholder="Your email address" required />
-      <button type="submit">Notify Me</button>
+    <form action="https://formspree.io/f/xrbpjkwo" method="POST" onsubmit="showConfirmation(); return true;">
+      <input type="text" name="name" placeholder="Full Name (e.g., Jane Doe)" required pattern="[A-Za-z ]+" />
+      <input type="tel" name="phone" placeholder="Phone Number (WhatsApp preferred)" required pattern="[0-9]{10,15}" />
+      <input type="email" name="email" placeholder="Email Address (we’ll keep it private)" required />
+      <button type="submit">Join the VoltAir Revolution</button>
     </form>
+
+    <p id="confirmation">Thanks for joining VoltAir! You're now on the waitlist.</p>
 
     <footer>
       &copy; 2025 VoltAir. All rights reserved.
     </footer>
   </main>
+
+  <script>
+    function showConfirmation() {
+      setTimeout(() => {
+        document.getElementById('confirmation').style.display = 'block';
+      }, 500);
+    }
+  </script>
 </body>
 </html>
