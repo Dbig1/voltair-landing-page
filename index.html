@@ -3,108 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoltAir | Revolutionizing Wireless Charging</title>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TDEJXEJE09');
-  </script>
-  <link rel="icon" href="assets/images/voltair-favicon.png" type="image/png" />
+  <title>VoltAir - Power the Future</title>
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-      color: #fff;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
       padding: 2rem;
     }
-
-    header img {
-      width: 100px;
+    h1 {
+      font-size: 2rem;
       margin-bottom: 1rem;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      color: #ccc;
-    }
-
     form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff99;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      margin-top: 1rem;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"] {
-      padding: 0.75rem 1rem;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 1rem;
+      gap: 1rem;
       width: 100%;
-      max-width: 300px;
+      max-width: 400px;
     }
-
-    button {
-      background-color: #00c6ff;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
+    input {
+      padding: 0.8rem;
+      border-radius: 5px;
       border: none;
-      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background: #00ff99;
+      color: #000;
+      padding: 1rem;
+      border: none;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
-
     button:hover {
-      background-color: #0090c0;
+      background: #00cc77;
     }
-
-    footer {
-      margin-top: 2rem;
-      font-size: 0.875rem;
-      color: #888;
+    .success {
+      display: none;
+      margin-top: 1rem;
+      color: #00ff99;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="voltair-logo.png" alt="VoltAir Logo" />
-  </header>
+  <h1>Be the First to Experience VoltAir</h1>
+  <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST">
+    <input type="text" name="Full Name" placeholder="Your Full Name" required />
+    <input type="tel" name="Phone Number" placeholder="Phone Number" required />
+    <input type="email" name="Email" placeholder="Email Address" required />
+    <button type="submit">Notify Me</button>
+    <div class="success" id="success-message">Thank you! You're on the list.</div>
+  </form>
 
-  <main>
-    <h1>Revolutionizing Wireless Charging</h1>
-    <h2>Join the VoltAir Waitlist</h2>
-    <p>Be the first to experience next-gen wireless power. Sign up now:</p>
+  <script>
+    const form = document.getElementById('waitlist-form');
+    const success = document.getElementById('success-message');
 
-    <form action="https://formspree.io/f/xrbpjkwo" method="POST">
-      <input type="text" name="fullname" placeholder="Your full name" required />
-      <input type="email" name="email" placeholder="Your email address" required />
-      <input type="tel" name="phone" placeholder="Your phone number" pattern="[0-9+ ]{7,15}" required />
-      <button type="submit">Join the Waitlist</button>
-    </form>
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
 
-    <footer>
-      &copy; 2025 VoltAir. All rights reserved.
-    </footer>
-  </main>
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
+
+        if (res.ok) {
+          form.reset();
+          success.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch (error) {
+        alert('Connection error. Please try later.');
+      }
+    });
+  </script>
 </body>
 </html>
