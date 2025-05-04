@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoltAir | Revolutionizing Wireless Charging</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TDEJXEJE09');
+  </script>
   <link rel="icon" href="assets/images/voltair-favicon.png" type="image/png" />
   <style>
     body {
@@ -42,8 +50,6 @@
       flex-direction: column;
       align-items: center;
       margin-top: 1rem;
-      width: 100%;
-      max-width: 400px;
     }
 
     input[type="text"],
@@ -54,7 +60,7 @@
       border-radius: 8px;
       margin-bottom: 1rem;
       width: 100%;
-      font-size: 1rem;
+      max-width: 300px;
     }
 
     button {
@@ -72,38 +78,12 @@
       background-color: #0090c0;
     }
 
-    .trust-section {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-
     footer {
       margin-top: 2rem;
       font-size: 0.875rem;
       color: #888;
     }
-
-    @media screen and (max-width: 480px) {
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-    }
   </style>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDEJXEJE09"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'G-TDEJXEJE09');
-  </script>
 </head>
 <body>
   <header>
@@ -113,22 +93,18 @@
   <main>
     <h1>Revolutionizing Wireless Charging</h1>
     <h2>Join the VoltAir Waitlist</h2>
-    <p>Be among the first to experience the future of wireless power.</p>
+    <p>Be the first to experience next-gen wireless power. Sign up now:</p>
 
     <form action="https://formspree.io/f/xrbpjkwo" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required />
-      <input type="email" name="email" placeholder="Email Address" required />
-      <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9+ ]+" required />
-      <button type="submit">Notify Me</button>
+      <input type="text" name="fullname" placeholder="Your full name" required />
+      <input type="email" name="email" placeholder="Your email address" required />
+      <input type="tel" name="phone" placeholder="Your phone number" pattern="[0-9+ ]{7,15}" required />
+      <button type="submit">Join the Waitlist</button>
     </form>
-
-    <div class="trust-section">
-      Trusted by early adopters across the globe. Featured in top innovation hubs.
-    </div>
 
     <footer>
       &copy; 2025 VoltAir. All rights reserved.
     </footer>
   </main>
 </body>
-  </html>
+</html>
