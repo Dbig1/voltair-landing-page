@@ -4,21 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoltAir - Power the Future</title>
-  <link rel="icon" href="default-logo.ico" />
+  <meta name="description" content="Join VoltAir – the future of wireless charging. Sign up now to be among the first to experience innovation without limits." />
+  <meta name="keywords" content="VoltAir, wireless charging, future tech, innovation, power, waitlist" />
+  <meta name="author" content="VoltAir Team" />
+  <link rel="icon" href="favicon.ico" />
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #0b0b0b;
       color: #ffffff;
+      margin: 0;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
     }
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      text-align: center;
     }
     form {
       background: #1a1a1a;
@@ -54,11 +58,25 @@
       margin-top: 1rem;
       color: #00ff99;
       font-weight: bold;
+      text-align: center;
+    }
+    section {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    @media screen and (max-width: 480px) {
+      body {
+        padding: 1rem;
+      }
+      form {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <h1>Be the First to Experience VoltAir</h1>
+  
   <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST">
     <input type="text" name="Full Name" placeholder="Your Full Name" required />
     <input type="tel" name="Phone Number" placeholder="Phone Number" required />
@@ -67,6 +85,11 @@
     <div class="success" id="success-message">Thank you! You're on the list.</div>
   </form>
 
+  <section>
+    <h2 style="color: #00ff99;">Trusted by Future Thinkers</h2>
+    <p>Over 1,000+ early adopters have joined our waitlist.</p>
+  </section>
+
   <script>
     const form = document.getElementById('waitlist-form');
     const success = document.getElementById('success-message');
@@ -74,14 +97,11 @@
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
 
       try {
         const res = await fetch(form.action, {
           method: 'POST',
-          headers: {
-            'Accept': 'application/json'
-          },
+          headers: { 'Accept': 'application/json' },
           body: formData
         });
 
