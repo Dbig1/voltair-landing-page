@@ -1,74 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><style>
-  #volt-insight-cards {<style>
-  #volt-insight-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-    background: #f8f9fb;
-  }
-
-  .insight-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .insight-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  .insight-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 0.75rem;
-  }
-
-  .insight-description {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-  }
-</style>
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-    background: #f8f9fb;
-  }
-
-  .insight-card {
-    background: white;
-    border-radius: 16px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-    padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .insight-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  }
-
-  .insight-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #1a1a1a;
-    margin-bottom: 0.75rem;
-  }
-
-  .insight-description {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-  }
-</style>
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoltAir - Power the Future</title>
@@ -77,95 +9,7 @@
   <meta name="author" content="VoltAir Team" />
   <link rel="icon" href="favicon.ico" />
   <style>
-    body {<section id="volt-insights" class="insight-cards">
-  <div class="card">
-    <h3>Device Charging Efficiency</h3>
-    <p>Monitor real-time energy transfer and optimize output.</p>
-  </div>
-  <div class="card">
-    <h3>VoltShield Security</h3>
-    <p>Track unauthorized usage or physical tampering alerts.</p>
-  </div>
-  <div class="card">
-    <h3>Wireless Power Health</h3>
-    <p>Get diagnostics on charging coil health and stability.</p>
-  </div>
-
-  <!-- VoltOS Control Panel Section -->
-  <div class="control-panel">
-    <h2>VoltOS Control Panel</h2>
-    <button>Enable VoltShield</button>
-    <button>Sync VoltPack</button>
-    <button>System Diagnostics</button>
-  </div>
-
-  <div class="card">
-    <h3>Environmental Temperature</h3>
-    <p>Detect overheating and auto-balance charge speeds.</p>
-  </div>
-  <div class="card">
-    <h3>Connected Device History</h3>
-    <p>View and manage devices previously charged.</p>
-  </div>
-  <div class="card">
-    <h3>Smart Charge Scheduling</h3>
-    <p>Automate charge cycles to reduce grid load.</p>
-  </div>
-</section>
-
-<style>
-.insight-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 40px;
-  justify-content: center;
-  background: #f8f9fc;
-}
-
-.card, .control-panel {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  padding: 24px;
-  width: 300px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.control-panel {
-  width: 100%;
-  max-width: 960px;
-  margin: 40px auto;
-  text-align: center;
-}
-
-.control-panel button {
-  margin: 10px;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  background: #4f46e5;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.control-panel button:hover {
-  background: #3730a3;
-}
-
-@media (max-width: 768px) {
-  .card, .control-panel {
-    width: 100%;
-  }
-}
-</style>
+    body {
       font-family: Arial, sans-serif;
       background: #0b0b0b;
       color: #ffffff;
@@ -174,12 +18,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    
+    }
+
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;
       text-align: center;
     }
+
     form {
       background: #1a1a1a;
       padding: 2rem;
@@ -191,12 +37,14 @@
       width: 100%;
       max-width: 400px;
     }
+
     input {
       padding: 0.8rem;
       border-radius: 5px;
       border: none;
       font-size: 1rem;
     }
+
     button {
       background: #00ff99;
       color: #000;
@@ -206,9 +54,11 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     button:hover {
       background: #00cc77;
     }
+
     .success {
       display: none;
       margin-top: 1rem;
@@ -216,21 +66,58 @@
       font-weight: bold;
       text-align: center;
     }
+
     section {
       margin-top: 2rem;
       text-align: center;
     }
+
+    #volt-insight-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      background: #f8f9fb;
+    }
+
+    .insight-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .insight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .insight-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-bottom: 0.75rem;
+    }
+
+    .insight-description {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
     @media screen and (max-width: 480px) {
       body {
         padding: 1rem;
       }
+
       form {
         padding: 1.5rem;
       }
     }
   </style>
 </head>
-<body><img src="logo.png" alt="VoltAir Logo" style="width: 120px; margin-bottom: 1.5rem;" />
+<body>
   <img src="voltair-logo.png" alt="VoltAir Logo" style="height: 60px; margin-bottom: 20px;" />
   <h1>Be the First to Experience VoltAir</h1>
   
@@ -245,6 +132,33 @@
   <section>
     <h2 style="color: #00ff99;">Trusted by Future Thinkers</h2>
     <p>Over 1,000+ early adopters have joined our waitlist.</p>
+  </section>
+
+  <section id="volt-insight-cards">
+    <div class="insight-card">
+      <h3 class="insight-title">Device Charging Efficiency</h3>
+      <p class="insight-description">Monitor real-time energy transfer and optimize output.</p>
+    </div>
+    <div class="insight-card">
+      <h3 class="insight-title">VoltShield Security</h3>
+      <p class="insight-description">Track unauthorized usage or physical tampering alerts.</p>
+    </div>
+    <div class="insight-card">
+      <h3 class="insight-title">Wireless Power Health</h3>
+      <p class="insight-description">Get diagnostics on charging coil health and stability.</p>
+    </div>
+    <div class="insight-card">
+      <h3 class="insight-title">Environmental Temperature</h3>
+      <p class="insight-description">Detect overheating and auto-balance charge speeds.</p>
+    </div>
+    <div class="insight-card">
+      <h3 class="insight-title">Connected Device History</h3>
+      <p class="insight-description">View and manage devices previously charged.</p>
+    </div>
+    <div class="insight-card">
+      <h3 class="insight-title">Smart Charge Scheduling</h3>
+      <p class="insight-description">Automate charge cycles to reduce grid load.</p>
+    </div>
   </section>
 
   <script>
