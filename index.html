@@ -7,6 +7,10 @@
   <meta name="description" content="Join VoltAir – the future of wireless charging. Sign up now to be among the first to experience innovation without limits." />
   <meta name="keywords" content="VoltAir, wireless charging, future tech, innovation, power, waitlist" />
   <meta name="author" content="VoltAir Team" />
+  <meta property="og:title" content="VoltAir - Power the Future">
+  <meta property="og:description" content="Join VoltAir – the future of wireless charging. Sign up now.">
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
   <link rel="icon" href="favicon.ico" />
   <style>
     body {
@@ -77,7 +81,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       padding: 2rem;
-      background: #f8f9fb;
+      background: #1a1a1a; /* Updated to match dark theme */
     }
 
     .insight-card {
@@ -159,95 +163,32 @@
       <h3 class="insight-title">Energy-Saving Mode</h3>
       <p class="insight-description">Automatically switch to low-power mode when device is full or idle.</p>
     </div>
+
+    <!-- Additional Insight Card -->
+    <div class="insight-card">
+      <h3 class="insight-title">Smart Charge Scheduler</h3>
+      <p class="insight-description">Automatically adjust charging patterns based on your usage trends.</p>
+    </div>
   </section>
 
-  <!-- New VoltAir Production Roadmap Section -->
-  <section id="roadmap" style="background:#0b0f1c; color:white; padding: 60px 20px; text-align:center;">
-    <h2 style="font-size:2.5em; margin-bottom:10px;">VoltAir Production Roadmap</h2>
-
-    <p style="max-width:600px; margin:0 auto 40px; font-size:1.1em; color:#cfd8e3;">
-      At VoltAir, we don’t just create — we engineer the future.  
-      This is our journey, from groundbreaking innovation to a global launch.
+  <section id="roadmap-image" style="margin-top: 3rem; text-align: center;">
+    <h2 style="color: #00ff99; margin-bottom: 1rem;">VoltAir Roadmap</h2>
+    <p style="color: #ccc; margin-bottom: 1.5rem;">
+      Explore the phases of innovation powering the VoltAir ecosystem.
     </p>
-    
-    <img src="https://chat.openai.com/share/3ff2e4ef-37c6-4c2b-90e2-ef76e441bf4e" alt="VoltAir Production Roadmap" style="max-width:100%; border-radius:20px; box-shadow:0 0 20px rgba(0,255,255,0.2); margin: 20px auto;" />
-    
-    <div style="display: flex; flex-direction: column; align-items: center; gap: 40px;">
-      <div style="text-align: left; max-width: 600px;">
-        <h3 style="color:#00d8ff;">1. Concept Phase</h3>
-        <p style="color:#cfd8e3;">
-          This is where innovation begins. Our team brainstorms groundbreaking ideas to redefine the future of energy.
-        </p>
-      </div>
-
-      <div style="text-align: left; max-width: 600px;">
-        <h3 style="color:#00d8ff;">2. Design & Prototyping</h3>
-        <p style="color:#cfd8e3;">
-          Bringing concepts to life with advanced designs and prototypes, ready for testing.
-        </p>
-      </div>
-
-      <div style="text-align: left; max-width: 600px;">
-        <h3 style="color:#00d8ff;">3. Manufacturing</h3>
-        <p style="color:#cfd8e3;">
-          Building the first production units with precision engineering and sustainable practices.
-        </p>
-      </div>
-
-      <div style="text-align: left; max-width: 600px;">
-        <h3 style="color:#00d8ff;">4. Beta Testing</h3>
-        <p style="color:#cfd8e3;">
-          Testing with real-world scenarios to ensure performance, safety, and efficiency.
-        </p>
-      </div>
-
-      <div style="text-align: left; max-width: 600px;">
-        <h3 style="color:#00d8ff;">5. Market Launch</h3>
-        <p style="color:#cfd8e3;">
-          Launching VoltAir to the world, transforming energy solutions for everyone.
-        </p>
-      </div>
-
-      <div style="text-align: left; max-width: 600px;">
-        <h3 style="color:#00d8ff;">6. Future Plans</h3>
-        <p style="color:#cfd8e3;">
-          Expanding with VoltGlow, VoltPack, and other innovative solutions for sustainable energy.
-        </p>
-      </div>
-    </div>
-
-    <div style="margin-top:40px;">
-      <a href="#waitlist" style="padding: 10px 20px; background:#00d8ff; color:black; text-decoration:none; border-radius:5px; font-size:1.2em;">
-        Join Our Waitlist
-      </a>
-    </div>
+    <img src="assets/roadmap.png" alt="VoltAir Roadmap" 
+         style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 20px #00ff99;" />
   </section>
 
   <script>
-    const form = document.getElementById('waitlist-form');
-    const success = document.getElementById('success-message');
+    const form = document.getElementById("waitlist-form");
+    const successMessage = document.getElementById("success-message");
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData
-        });
-
-        if (res.ok) {
-          form.reset();
-          success.style.display = 'block';
-        } else {
-          alert('Something went wrong. Please try again.');
-        }
-      } catch (error) {
-        alert('Connection error. Please try later.');
-      }
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default for demonstration/testing
+      successMessage.style.display = "block";
+      form.reset();
     });
   </script>
 </body>
-                                                                                                       </html>
+      </html>
