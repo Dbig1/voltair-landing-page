@@ -83,6 +83,10 @@
       gap: 1.5rem;
       padding: 2rem;
       background: #1a1a1a;
+      border-radius: 12px;
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 1000px;
     }
 
     .insight-card {
@@ -132,6 +136,7 @@
     <!-- Waitlist Form -->
     <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST" aria-labelledby="waitlist-title">
       <h2 id="waitlist-title" style="text-align: center;">Join Our Waitlist</h2>
+      
       <label for="full-name">Full Name</label>
       <input id="full-name" type="text" name="Full Name" placeholder="Your Full Name" required />
       
@@ -141,91 +146,26 @@
       <label for="email">Email Address</label>
       <input id="email" type="email" name="Email" placeholder="Email Address" required />
       
-      <button type="submit">Notify Me</button>
-      <div class="success" id="success-message" role="alert" aria-live="polite">Thank you! You're on the list.</div>
+      <button type="submit">Join Now</button>
     </form>
 
-    <!-- Trusted by Future Thinkers -->
-    <section>
-      <h2 style="color: #00ff99; text-align: center;">Trusted by Future Thinkers</h2>
-      <p style="text-align: center;">Over 1,000+ early adopters have joined our waitlist.</p>
-    </section>
-
-    <!-- VoltOS Insight Cards -->
-    <section id="volt-insight-cards" aria-labelledby="insight-title">
-      <h2 id="insight-title" style="text-align: center; margin-bottom: 2rem;">VoltOS Insight Features</h2>
+    <div class="success" id="success-message">Thank you for joining! We'll keep you updated.</div>
+    
+    <!-- Volt Insight Cards -->
+    <section id="volt-insight-cards" aria-label="Volt Insight Cards">
       <div class="insight-card">
-        <h3 class="insight-title">Device Charging Efficiency</h3>
-        <p class="insight-description">Monitor real-time energy transfer and optimize output.</p>
+        <div class="insight-title">Auto Secure Mode</div>
+        <div class="insight-description">VoltShield activates automatically when unknown devices approach. Security without lifting a finger.</div>
       </div>
-
       <div class="insight-card">
-        <h3 class="insight-title">VoltShield Security</h3>
-        <p class="insight-description">Track unauthorized usage or physical tampering alerts.</p>
+        <div class="insight-title">Power Usage Summary</div>
+        <div class="insight-description">Track how much power your device consumes daily and optimize for efficiency with VoltOS insights.</div>
       </div>
-
       <div class="insight-card">
-        <h3 class="insight-title">Wireless Power Health</h3>
-        <p class="insight-description">Get diagnostics on charging coil health and stability.</p>
+        <div class="insight-title">Smart Charging Profiles</div>
+        <div class="insight-description">Customize charging speed and time to match your lifestyle and protect battery health.</div>
       </div>
-
-      <div class="insight-card">
-        <h3 class="insight-title">Environmental Adaptivity</h3>
-        <p class="insight-description">VoltOS auto-adjusts power output based on temperature and usage.</p>
-      </div>
-
-      <div class="insight-card">
-        <h3 class="insight-title">Energy-Saving Mode</h3>
-        <p class="insight-description">Automatically switch to low-power mode when device is full or idle.</p>
-      </div>
-
-      <div class="insight-card">
-        <h3 class="insight-title">Smart Charge Scheduler</h3>
-        <p class="insight-description">Automatically adjust charging patterns based on your usage trends.</p>
-      </div>
-    </section>
-
-    <!-- VoltAir Roadmap -->
-    <section id="roadmap-image" style="margin-top: 3rem; text-align: center;" aria-labelledby="roadmap-title">
-      <h2 id="roadmap-title" style="color: #00ff99; margin-bottom: 1rem;">VoltAir Roadmap</h2>
-      <p style="color: #ccc; margin-bottom: 1.5rem;">
-        Explore the phases of innovation powering the VoltAir ecosystem.
-      </p>
-      <img src="assets/roadmap.png" alt="VoltAir Roadmap" 
-           style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 20px #00ff99;" width="600" height="400" />
     </section>
   </main>
-
-  <!-- Footer Section -->
-  <footer style="text-align: center; margin-top: 2rem; padding: 1rem; background: #1a1a1a; color: #ccc;">
-    <p>&copy; 2025 VoltAir. All rights reserved. | <a href="https://yourdomain.com/privacy" style="color: #00ff99; text-decoration: none;">Privacy Policy</a></p>
-  </footer>
-
-  <script>
-    const form = document.getElementById("waitlist-form");
-    const successMessage = document.getElementById("success-message");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-
-      try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: formData
-        });
-
-        if (res.ok) {
-          form.reset();
-          successMessage.style.display = "block";
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      } catch (error) {
-        alert("Connection error. Please try later.");
-      }
-    });
-  </script>
 </body>
 </html>
