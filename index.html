@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VoltAir - Power the Future</title>
   <meta name="description" content="Join VoltAir – the future of wireless charging. Sign up now to be among the first to experience innovation without limits." />
-  <meta name="keywords" content="VoltAir, wireless charging, future tech, innovation, power, waitlist" />
   <meta name="author" content="VoltAir Team" />
   <meta property="og:title" content="VoltAir - Power the Future">
   <meta property="og:description" content="Join VoltAir – the future of wireless charging. Sign up now.">
   <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
   <meta property="og:url" content="https://yourdomain.com">
+  <link rel="canonical" href="https://yourdomain.com/" />
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -82,7 +82,7 @@
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       padding: 2rem;
-      background: #1a1a1a; /* Updated to match dark theme */
+      background: #1a1a1a;
     }
 
     .insight-card {
@@ -124,7 +124,7 @@
 </head>
 <body>
   <header style="text-align: center; margin-bottom: 2rem;">
-    <img src="voltair-logo.png" alt="VoltAir Logo" style="height: 60px; margin-bottom: 20px;" />
+    <img src="voltair-logo.png" alt="VoltAir Logo" style="height: 60px; margin-bottom: 20px;" width="120" height="60" />
     <h1>Be the First to Experience VoltAir</h1>
   </header>
   
@@ -136,7 +136,7 @@
       <input id="full-name" type="text" name="Full Name" placeholder="Your Full Name" required />
       
       <label for="phone-number">Phone Number</label>
-      <input id="phone-number" type="tel" name="Phone Number" placeholder="Phone Number" required />
+      <input id="phone-number" type="tel" name="Phone Number" placeholder="Phone Number" pattern="\\d{10}" title="Please enter a valid 10-digit phone number" required />
       
       <label for="email">Email Address</label>
       <input id="email" type="email" name="Email" placeholder="Email Address" required />
@@ -192,7 +192,7 @@
         Explore the phases of innovation powering the VoltAir ecosystem.
       </p>
       <img src="assets/roadmap.png" alt="VoltAir Roadmap" 
-           style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 20px #00ff99;" />
+           style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 0 20px #00ff99;" width="600" height="400" />
     </section>
   </main>
 
@@ -228,4 +228,4 @@
     });
   </script>
 </body>
-</html
+</html>
