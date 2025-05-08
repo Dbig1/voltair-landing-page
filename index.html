@@ -75,40 +75,60 @@
 
     section {
       margin-top: 2rem;
-      text-align: center;
-    }
+      /* Adding mobile responsiveness for form */
+@media screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
 
-    #volt-insight-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      background: #1a1a1a;
-      border-radius: 12px;
-      margin-top: 3rem;
-      width: 100%;
-      max-width: 1000px;
-    }
+  form {
+    padding: 1.5rem;
+    width: 90%; /* Adjust width for smaller screens */
+  }
 
-    .insight-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+  input, button {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
 
-    .insight-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
+section#volt-insight-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1000px;
+}
 
-    .insight-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #1a1a1a;
-      margin-bottom: 0.75rem;
-    }
+.insight-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.insight-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.insight-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
 
     .insight-description {
       font-size: 0.95rem;
