@@ -12,35 +12,46 @@
   <meta property="og:url" content="https://yourdomain.com">
   <link rel="canonical" href="https://yourdomain.com/" />
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #0b0b0b;
       color: #ffffff;
       margin: 0;
-      padding: 2rem;
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
     header img {
-      width: 150px;
+      width: 130px;
       height: auto;
       margin-bottom: 2rem;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
       text-align: center;
+    }
+
+    p.description {
+      text-align: center;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      line-height: 1.5;
     }
 
     form {
       background: #1a1a1a;
       padding: 2rem;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 0 15px #00ff99;
       display: flex;
       flex-direction: column;
@@ -50,8 +61,8 @@
     }
 
     input {
-      padding: 0.8rem;
-      border-radius: 5px;
+      padding: 0.9rem;
+      border-radius: 6px;
       border: none;
       font-size: 1rem;
     }
@@ -62,7 +73,9 @@
       padding: 1rem;
       border: none;
       font-size: 1rem;
+      border-radius: 6px;
       cursor: pointer;
+      font-weight: bold;
       transition: background 0.3s;
     }
 
@@ -78,9 +91,12 @@
       text-align: center;
     }
 
-    section {
-      margin-top: 2rem;
+    section#volt-insight-cards {
+      margin-top: 3rem;
       text-align: center;
+      width: 100%;
+      max-width: 1000px;
+      padding: 1rem;
     }
 
     #volt-insight-cards {
@@ -90,9 +106,6 @@
       padding: 2rem;
       background: #1a1a1a;
       border-radius: 12px;
-      margin-top: 3rem;
-      width: 100%;
-      max-width: 1000px;
     }
 
     .insight-card {
@@ -112,121 +125,63 @@
       font-size: 1.25rem;
       font-weight: bold;
       color: #1a1a1a;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
     }
 
     .insight-description {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.5;
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.4;
     }
 
-    @media screen and (max-width: 480px) {
-      body {
-        padding: 1rem;
+    footer {
+      margin-top: 4rem;
+      color: #888;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
       }
 
-      form {
-        padding: 1.5rem;
+      p.description {
+        font-size: 1rem;
       }
-    }
-
-    #voltbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #00ff99;
-      color: black;
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-    }
-
-    #chat-panel {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      background-color: #1a1a1a;
-      color: white;
-      padding: 1rem;
-      width: 300px;
-      max-height: 400px;
-      overflow-y: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-      display: none;
-      flex-direction: column;
-    }
-
-    #instructions {
-      margin-top: 2rem;
-      background: #222;
-      padding: 1.5rem;
-      border-radius: 10px;
-      max-width: 600px;
-      text-align: left;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="assets/voltair-logo.png" alt="VoltAir Logo" />
+    <img src="logo.png" alt="VoltAir Logo" />
+    <h1>VoltAir – Power the Future</h1>
+    <p class="description">Be the first to experience the next evolution of wireless charging. Sign up to get exclusive early access and updates.</p>
   </header>
 
-  <h1>Welcome to VoltAir</h1>
-
-  <form id="signup-form">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Email Address" required />
-    <input type="tel" name="phone" placeholder="Phone Number (Optional)" />
+  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+    <input type="email" name="email" placeholder="Enter your email" required />
     <button type="submit">Join the Waitlist</button>
-    <div class="success" id="success-message">Thank you for signing up!</div>
+    <p class="success" id="successMessage">Thanks for signing up!</p>
   </form>
-
-  <section id="instructions">
-    <h2>How It Works</h2>
-    <p>VoltAir is building the future of wireless charging. Sign up to receive early access, exclusive updates, and innovation insights before anyone else.</p>
-  </section>
 
   <section id="volt-insight-cards">
     <div class="insight-card">
-      <div class="insight-title">Wireless Freedom</div>
-      <div class="insight-description">Experience cable-free convenience with VoltAir's cutting-edge wireless charging system.</div>
+      <div class="insight-title">Truly Wireless Power</div>
+      <div class="insight-description">VoltAir redefines mobility with no cables or pads. Experience charging like never before—freedom in motion.</div>
     </div>
     <div class="insight-card">
-      <div class="insight-title">Secure Tech</div>
-      <div class="insight-description">VoltShield protects your device while charging with secure pairing and owner-lock mode.</div>
+      <div class="insight-title">Smart Power Intelligence</div>
+      <div class="insight-description">Automatically adjusts to your device's needs, delivering fast, safe, and optimized charging every time.</div>
     </div>
     <div class="insight-card">
-      <div class="insight-title">Smart Insights</div>
-      <div class="insight-description">Get personalized tips, usage stats, and optimization suggestions right from your VoltAir dashboard.</div>
+      <div class="insight-title">Secure Priority Mode</div>
+      <div class="insight-description">With VoltShield, only you can command your VoltAir. Your power, protected and prioritized.</div>
     </div>
   </section>
 
-  <div id="voltbot" onclick="toggleChat()">Nova</div>
-
-  <div id="chat-panel">
-    <strong>Nova Bot:</strong>
-    <p>Hello! I'm Nova, your VoltAir assistant. Ask me anything about your charger or the waitlist.</p>
-  </div>
-
-  <script>
-    const form = document.getElementById("signup-form");
-    const successMessage = document.getElementById("success-message");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      successMessage.style.display = "block";
-      form.reset();
-    });
-
-    function toggleChat() {
-      const chatPanel = document.getElementById("chat-panel");
-      chatPanel.style.display = chatPanel.style.display === "none" ? "flex" : "none";
-    }
-  </script>
-
+  <footer>
+    &copy; 2025 VoltAir. All rights reserved.
+  </footer>
 </body>
-                      </html>
+  </html>
