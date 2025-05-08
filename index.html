@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
   <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
   <meta property="og:url" content="https://yourdomain.com" />
   <link rel="icon" href="favicon.ico" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -20,145 +22,137 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }header img {
-  width: 150px;
-  height: auto;
-  margin-bottom: 2rem;
-}
-  <header>
-    <img src="logo.png" alt="VoltAir Logo" />
-    <h1>Welcome to VoltAir</h1>
-  </header>
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  text-align: center;
-}
+    }
 
-form {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00ff99;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 400px;
-}
+    header img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 2rem;
+    }
 
-input {
-  padding: 0.8rem;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-}
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
 
-button {
-  background: #00ff99;
-  color: #000;
-  padding: 1rem;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+    form {
+      background: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff99;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
 
-button:hover {
-  background: #00cc77;
-}
+    input {
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
 
-.success, .error {
-  display: none;
-  margin-top: 1rem;
-  font-weight: bold;
-  text-align: center;
-}
+    button {
+      background: #00ff99;
+      color: #000;
+      padding: 1rem;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
 
-.success {
-  color: #00ff99;
-}
+    button:hover {
+      background: #00cc77;
+    }
 
-.error {
-  color: #ff5050;
-}
+    .success, .error {
+      display: none;
+      margin-top: 1rem;
+      font-weight: bold;
+      text-align: center;
+    }
 
-#volt-insight-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  background: #1a1a1a;
-  border-radius: 12px;
-  margin-top: 3rem;
-  width: 100%;
-  max-width: 1000px;
-}
+    .success {
+      color: #00ff99;
+    }
 
-.insight-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .error {
+      color: #ff5050;
+    }
 
-.insight-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
+    #volt-insight-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      background: #1a1a1a;
+      border-radius: 12px;
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 1000px;
+    }
 
-.insight-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #1a1a1a;
-  margin-bottom: 0.5rem;
-}
+    .insight-card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.insight-text {
-  font-size: 1rem;
-  color: #333;
-}
+    .insight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
 
-#nova-bot-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background: #121212;
-  border: 2px dashed #00ff99;
-  border-radius: 12px;
-  text-align: center;
-}
+    .insight-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-bottom: 0.5rem;
+    }
 
+    .insight-text {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    #nova-bot-section {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: #121212;
+      border: 2px dashed #00ff99;
+      border-radius: 12px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <header>
-             <img src="logo.png" alt="VoltAir.Logo" />
+    <img src="logo.png" alt="VoltAir Logo" />
     <h1>Welcome to VoltAir</h1>
-  </header>  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+  </header>
+
+  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
-    <input type="tel" name="phone" placeholder="Your Phone Number" required />
+    <input type="tel" name="phone" placeholder="Your Phone Number" />
     <button type="submit">Join the Waitlist</button>
-    <div class="success">Thank you! We'll be in touch soon.</div>
-    <div class="error">Oops! Please try again.</div>
-  </form>  <section id="volt-insight-cards">
-    <div class="insight-card">
-      <div class="insight-title">Quantum Wireless</div>
-      <div class="insight-text">Cutting-edge technology for seamless energy transfer.</div>
-    </div>
-    <div class="insight-card">
-      <div class="insight-title">VoltShield Security</div>
-      <div class="insight-text">Your charger. Your rules. Protected by Nova AI.</div>
-    </div>
-    <div class="insight-card">
-      <div class="insight-title">EcoSmart Efficiency</div>
-      <div class="insight-text">Optimized for energy-saving, eco-friendly power flow.</div>
-    </div>
-  </section>  <section id="nova-bot-section">
-    <h2>Nova Bot</h2>
-    <p>Nova is your intelligent assistant, managing secure charging and device pairing with advanced AI insight.</p>
-    <button onclick="alert('Nova bot engaged!')">Activate Nova</button>
+    <div class="success">Thank you for joining!</div>
+    <div class="error">Oops! Something went wrong.</div>
+  </form>
+
+  <section id="volt-insight-cards">
+    <!-- Insight cards will be injected here -->
+  </section>
+
+  <section id="nova-bot-section">
+    <h2>Nova is listening...</h2>
+    <p>Need help or have a question? Just ask.</p>
   </section>
 </body>
-</html>
+      </html>
