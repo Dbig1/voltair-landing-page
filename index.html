@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +13,6 @@
   <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Basic Styles */
     body {
       font-family: Arial, sans-serif;
       background: #0b0b0b;
@@ -24,267 +22,176 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
+    }h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
+form {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ff99;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
 
-    form {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00ff99;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 400px;
-    }
+input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
 
-    input {
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1rem;
-    }
+button {
+  background: #00ff99;
+  color: #000;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    button {
-      background: #00ff99;
-      color: #000;
-      padding: 1rem;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+button:hover {
+  background: #00cc77;
+}
 
-    button:hover {
-      background: #00cc77;
-    }
+.success {
+  display: none;
+  margin-top: 1rem;
+  color: #00ff99;
+  font-weight: bold;
+  text-align: center;
+}
 
-    .success {
-      display: none;
-      margin-top: 1rem;
-      color: #00ff99;
-      font-weight: bold;
-      text-align: center;
-    }
+section {
+  margin-top: 2rem;
+  text-align: center;
+}
 
-    section {
-      margin-top: 2rem;
-      text-align: center;
-    }
+#volt-insight-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #121212;
+  border-radius: 12px;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1200px;
+}
 
-    #volt-insight-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      background: #1a1a1a;
-      border-radius: 12px;
-      margin-top: 3rem;
-      width: 100%;
-      max-width: 1000px;
-    }
+.insight-card {
+  background: #1e1e1e;
+  border-radius: 16px;
+  box-shadow: 0 0 12px #00ff99aa;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .insight-card {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-      padding: 1.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.insight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 255, 153, 0.3);
+}
 
-    .insight-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
+.insight-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #00ff99;
+  margin-bottom: 0.75rem;
+}
 
-    .insight-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #1a1a1a;
-      margin-bottom: 0.75rem;
-    }
+.insight-description {
+  font-size: 0.95rem;
+  color: #dddddd;
+  line-height: 1.5;
+}
 
-    .insight-description {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.5;
-    }
+@media screen and (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
 
-    @media screen and (max-width: 480px) {
-      body {
-        padding: 1rem;
-      }
+  form {
+    padding: 1.5rem;
+  }
+}
 
-      form {
-        padding: 1.5rem;
-      }
-    }
+#voltbot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00ff99;
+  color: black;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
 
-    /* VoltBot Floating Button */
-    #voltbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #00ff99;
-      color: black;
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-    }
+#chat-panel {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #00ff99;
+  border-radius: 12px;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+  display: none;
+}
 
-    /* VoltBot Chat Panel */
-    #chat-panel {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 300px;
-      height: 400px;
-      background-color: #1a1a1a;
-      color: white;
-      border-radius: 12px;
-      display: none;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    #chat-header {
-      font-weight: bold;
-      margin-bottom: 15px;
-      text-align: center;
-    }
-
-    #chat-window {
-      flex-grow: 1;
-      overflow-y: auto;
-      margin-bottom: 15px;
-    }
-
-    input#user-input {
-      padding: 10px;
-      width: 100%;
-      border-radius: 5px;
-      border: none;
-      margin-bottom: 10px;
-    }
-
-    button#send-btn {
-      background-color: #00ff99;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      width: 100%;
-      color: black;
-      cursor: pointer;
-    }
-
-    /* Nova Bot */
-    #nova-bot {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: #00ff99;
-      padding: 10px 20px;
-      border-radius: 50%;
-      color: #000;
-      cursor: pointer;
-    }
-
-    /* Instructions Box */
-    .instructions-box {
-      background-color: #f8f8f8;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 2rem;
-      text-align: center;
-    }
+.instruction-box {
+  margin-top: 2rem;
+  background: #1a1a1a;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #00ff99;
+  border-radius: 8px;
+  max-width: 800px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
 
   </style>
 </head>
 <body>
-  <header style="text-align: center; margin-bottom: 2rem;">
-    <img src="voltair-logo.png" alt="VoltAir Logo" style="height: 60px; margin-bottom: 20px;" width="120" height="60" />
-    <h1>Be the First to Experience VoltAir</h1>
-  </header>
-
-  <main>
-    <!-- Waitlist Form -->
-    <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST" aria-labelledby="waitlist-title">
-      <h2 id="waitlist-title" style="text-align: center;">Join Our Waitlist</h2>
-      <label for="full-name">Full Name</label>
-      <input id="full-name" type="text" name="Full Name" placeholder="Your Full Name" required />
-      
-      <label for="phone-number">Phone Number</label>
-      <input id="phone-number" type="tel" name="Phone Number" placeholder="Phone Number" pattern="\\d{10}" title="Please enter a valid 10-digit phone number" required />
-      
-      <label for="email">Email Address</label>
-      <input id="email" type="email" name="Email" placeholder="Email Address" required />
-      
-      <button type="submit">Join Now</button>
-    </form>
-
-    <div class="success" id="success-message">Thank you for joining! We'll keep you updated.</div>
-    
-    <!-- Volt Insight Cards -->
-    <section id="volt-insight-cards" aria-label="Volt Insight Cards">
-      <div class="insight-card">
-        <div class="insight-title">Auto Secure Mode</div>
-        <div class="insight-description">VoltShield activates automatically when unknown devices approach. Security without lifting a finger.</div>
-      </div>
-      <div class="insight-card">
-        <div class="insight-title">Power Usage Summary</div>
-        <div class="insight-description">Track how much power your device consumes daily and optimize for efficiency with VoltOS insights.</div>
-      </div>
-      <div class="insight-card">
-        <div class="insight-title">Smart Charging Profiles</div>
-        <div class="insight-description">Customize charging speed and time to match your lifestyle and protect battery health.</div>
-      </div>
-    </section>
-
-    <!-- Instructions Box -->
-    <div class="instructions-box">
-      <h3>How to Join the Waitlist</h3>
-      <p>To join the VoltAir waitlist, simply provide your full name, phone number, and email address, and you'll be among the first to experience the future of wireless charging. We’ll keep you updated on our progress!</p>
+  <h1>Join the VoltAir Movement</h1>
+  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <button type="submit">Join Waitlist</button>
+    <div class="success">Thanks for joining! We'll be in touch soon.</div>
+  </form>  <section id="volt-insight-cards">
+    <div class="insight-card">
+      <div class="insight-title">Intelligent Charging</div>
+      <div class="insight-description">VoltOS automatically adjusts output for device health and power efficiency.</div>
     </div>
-  </main>
-
-  <!-- Nova Bot -->
-  <div id="nova-bot">
-    💬
-  </div>
-
-  <!-- VoltBot Floating Button -->
-  <div id="voltbot">
-    💬
-  </div>
-
-  <!-- VoltBot Chat Panel -->
+    <div class="insight-card">
+      <div class="insight-title">VoltShield Mode</div>
+      <div class="insight-description">Activate secure owner-only mode to prevent unauthorized access or usage.</div>
+    </div>
+    <div class="insight-card">
+      <div class="insight-title">Pack Sync Technology</div>
+      <div class="insight-description">Seamlessly sync VoltAir with VoltPack for portable power on-the-go.</div>
+    </div>
+  </section>  <div class="instruction-box">
+    Tip: You can interact with NovaVoltBot (bottom right) to ask questions, get help, or explore VoltAir features.
+  </div>  <div id="voltbot" onclick="toggleChat()">Nova</div>
   <div id="chat-panel">
-    <div id="chat-header">VoltBot</div>
-    <div id="chat-window">
-      <p><strong>VoltBot:</strong> Hello! How can I assist you today?</p>
-    </div>
-    <input type="text" id="user-input" placeholder="Type your message..." />
-    <button id="send-btn">Send</button>
-  </div>
-
-  <script>
-    // JavaScript for VoltBot
-    document.getElementById('voltbot').addEventListener('click', function() {
-      const chatPanel = document.getElementById('chat-panel');
-      chatPanel.style.display = (chatPanel.style.display === 'block') ? 'none' : 'block';
-    });
-
-    // Nova Bot
-    document.getElementById('nova-bot').addEventListener('click', function() {
-      alert('Welcome to VoltAir, how can I assist you today?');
-    });
-  </script>
-</body>
-      </html>
+    <strong>NovaVoltBot:</strong>
+    <p>Hi, I’m Nova. Ask me anything about VoltAir or wireless charging!</p>
+  </div>  <script>
+    function toggleChat() {
+      const panel = document.getElementById("chat-panel");
+      panel.style.display = panel.style.display === "none" ? "block" : "none";
+    }
+  </script></body>
+</html>
