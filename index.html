@@ -12,26 +12,8 @@
   <meta property="og:url" content="https://yourdomain.com">
   <link rel="canonical" href="https://yourdomain.com/" />
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Basic Styles */
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
-      margin: 0;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
+    /* Waitlist Form Styles */
     form {
       background: #1a1a1a;
       padding: 2rem;
@@ -42,16 +24,20 @@
       gap: 1rem;
       width: 100%;
       max-width: 400px;
+      margin: 0 auto;
+      box-sizing: border-box; /* Ensures padding is accounted for in width */
     }
 
-    input {
+    form input {
       padding: 0.8rem;
       border-radius: 5px;
-      border: none;
+      border: 1px solid #333;
       font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box; /* Ensures padding is accounted for in width */
     }
 
-    button {
+    form button {
       background: #00ff99;
       color: #000;
       padding: 1rem;
@@ -59,169 +45,62 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
+      width: 100%; /* Makes button fill the width of the form */
     }
 
-    button:hover {
+    form button:hover {
       background: #00cc77;
+    }
+
+    form label {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    form input:focus {
+      outline: none;
+      border-color: #00ff99;
+    }
+
+    /* Responsive Adjustments */
+    @media screen and (max-width: 480px) {
+      form {
+        padding: 1.5rem;
+        gap: 0.8rem;
+      }
+
+      form button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+
+      form input {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Additional Fixes */
+    form input, form button {
+      font-family: 'Arial', sans-serif; /* Add a consistent font */
     }
 
     .success {
       display: none;
-      margin-top: 1rem;
-      color: #00ff99;
-      font-weight: bold;
-      text-align: center;
-    }
-input {
-  padding: 0.8rem;
-  border-radius: 5px;
-  form {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #00ff99;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  box-sizing: border-box; /* Ensures padding is accounted for in width */
-}
-
-form input {
-  padding: 0.8rem;
-  border-radius: 5px;
-  border: 1px solid #333;
-  font-size: 1rem;
-  width: 100%;
-  box-sizing: border-box; /* Ensures padding is accounted for in width */
-}
-
-form button {
-  background: #00ff99;
-  color: #000;
-  padding: 1rem;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-  width: 100%; /* Makes button fill the width of the form */
-}
-
-form button:hover {
-  background: #00cc77;
-}
-
-form label {
-  font-size: 1rem;
-  color: #fff;
-  margin-bottom: 0.5rem;
-}
-
-form input:focus {
-  outline: none;
-  border-color: #00ff99;
-}
-
-.insight-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-  padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.insight-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-}
-
-.insight-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #1a1a1a;
-  margin-bottom: 0.75rem;
-}
-
-.insight-description {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-}
-
-    .insight-description {
-      font-size: 0.95rem;
-      color: #555;
-      line-height: 1.5;
-    }
-
-    @media screen and (max-width: 480px) {
-      body {
-        padding: 1rem;
-      }
-
-      form {
-        padding: 1.5rem;
-      }
-    }
-
-    /* VoltBot Floating Button */
-    #voltbot {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #00ff99;
-      color: black;
-      padding: 15px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-    }
-
-    /* VoltBot Chat Panel */
-    #chat-panel {
-      position: fixed;
-      bottom: 80px;
-      right: 20px;
-      width: 300px;
-      height: 400px;
-      background-color: #1a1a1a;
+      background-color: #28a745;
       color: white;
-      border-radius: 12px;
-      display: none;
-      flex-direction: column;
-      padding: 20px;
-    }
-
-    #chat-header {
-      font-weight: bold;
-      margin-bottom: 15px;
+      padding: 1rem;
+      border-radius: 5px;
       text-align: center;
-    }
-
-    #chat-window {
-      flex-grow: 1;
-      overflow-y: auto;
-      margin-bottom: 15px;
-    }
-
-    input#user-input {
-      padding: 10px;
+      margin-top: 20px;
       width: 100%;
-      border-radius: 5px;
-      border: none;
-      margin-bottom: 10px;
+      max-width: 400px;
+      margin: 20px auto;
     }
 
-    button#send-btn {
-      background-color: #00ff99;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      width: 100%;
-      color: black;
-      cursor: pointer;
+    /* Show success message after form submission */
+    form .success.show {
+      display: block;
     }
   </style>
 </head>
@@ -236,50 +115,51 @@ form input:focus {
     <form id="waitlist-form" action="https://formspree.io/f/xrbpjkwo" method="POST" aria-labelledby="waitlist-title">
       <h2 id="waitlist-title" style="text-align: center;">Join Our Waitlist</h2>
       <label for="full-name">Full Name</label>
-      <input id="full-name" type="text" name="Full Name" placeholder="Your Full Name" required />
-      
+      <input
+        id="full-name"
+        type="text"
+        name="Full Name"
+        placeholder="Your Full Name"
+        required
+        aria-required="true"
+      />
+
       <label for="phone-number">Phone Number</label>
-      <input id="phone-number" type="tel" name="Phone Number" placeholder="Phone Number" pattern="\\d{10}" title="Please enter a valid 10-digit phone number" required />
-      
+      <input
+        id="phone-number"
+        type="tel"
+        name="Phone Number"
+        placeholder="Phone Number"
+        pattern="\d{10}"
+        title="Please enter a valid 10-digit phone number"
+        required
+        aria-required="true"
+        aria-invalid="false"
+      />
+
       <label for="email">Email Address</label>
-      <input id="email" type="email" name="Email" placeholder="Email Address" required />
-      
+      <input
+        id="email"
+        type="email"
+        name="Email"
+        placeholder="Email Address"
+        required
+        aria-required="true"
+        aria-invalid="false"
+      />
+
       <button type="submit">Join Now</button>
     </form>
 
     <div class="success" id="success-message">Thank you for joining! We'll keep you updated.</div>
-    
-    <!-- Volt Insight Cards -->
-    <section id="volt-insight-cards" aria-label="Volt Insight Cards">
-      <div class="insight-card">
-        <div class="insight-title">Auto Secure Mode</div>
-        <div class="insight-description">VoltShield activates automatically when unknown devices approach. Security without lifting a finger.</div>
-      </div>
-      <div class="insight-card">
-        <div class="insight-title">Power Usage Summary</div>
-        <div class="insight-description">Track how much power your device consumes daily and optimize for efficiency with VoltOS insights.</div>
-      </div>
-      <div class="insight-card">
-        <div class="insight-title">Smart Charging Profiles</div>
-        <div class="insight-description">Customize charging speed and time to match your lifestyle and protect battery health.</div>
-      </div>
-    </section>
   </main>
 
-  <!-- VoltBot Floating Button -->
-  <div id="voltbot">
-    💬
-  </div>
-
-  <!-- VoltBot Chat Panel -->
-  <div id="chat-panel">
-    <div id="chat-header">VoltBot</div>
-    <div id="chat-window">
-      <p><strong>VoltBot:</strong> Hello! How can I assist you today?</p>
-    </div>
-    <input type="text" id="user-input" placeholder="Type your message..." />
-    <button id="send-btn">Send</button>
-  </div>
-
   <script>
-    // JavaScript for VoltBot
+    document.getElementById("waitlist-form").addEventListener("submit", function(event) {
+      event.preventDefault();  // Prevent the form from submitting normally
+      document.getElementById("waitlist-form").reset();  // Reset form
+      document.getElementById("success-message").classList.add("show");  // Show success message
+    });
+  </script>
+</body>
+        </html>
