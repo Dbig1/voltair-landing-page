@@ -133,6 +133,55 @@
       color: #aaa;
       text-align: center;
     }
+
+    /* Chatbox style */
+    #nova-chatbox {
+      background-color: #1a1a1a;
+      color: #fff;
+      width: 100%;
+      max-width: 400px;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.5);
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    #nova-chatbox .chat-log {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+
+    .chat-message {
+      margin-bottom: 1rem;
+    }
+
+    .chat-message.user {
+      text-align: right;
+      color: #00ff99;
+    }
+
+    .chat-message.bot {
+      text-align: left;
+      color: #ffffff;
+    }
+
+    .chat-input {
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+      font-size: 1rem;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .chat-input:focus {
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -167,11 +216,46 @@
     </div>
   </section>
 
+  <div id="nova-chatbox">
+    <div class="chat-log" id="chat-log">
+      <div class="chat-message bot">Welcome to VoltAir! I am Nova, your assistant for all things wireless. How can I assist you today?</div>
+    </div>
+    <input type="text" id="chat-input" class="chat-input" placeholder="Ask me anything..." />
+  </div>
+
   <div id="nova-bot">Nova: Fully online and optimizing your wireless future...</div>
 
   <footer>
     &copy; 2025 VoltAir Inc. All rights reserved.
   </footer>
 
+  <script>
+    const chatInput = document.getElementById('chat-input');
+    const chatLog = document.getElementById('chat-log');
+
+    // Function to handle new messages
+    function addMessage(message, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('chat-message', sender);
+      messageDiv.innerText = message;
+      chatLog.appendChild(messageDiv);
+      chatLog.scrollTop = chatLog.scrollHeight; // Auto-scroll to latest message
+    }
+
+    // Handle user input
+    chatInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+        const userMessage = chatInput.value.trim();
+        addMessage(userMessage, 'user');
+        chatInput.value = ''; // Clear input box
+
+        // Simulate Nova bot response
+        setTimeout(() => {
+          addMessage(`Nova: I’m here to assist you. Ask away!`, 'bot');
+        }, 1000);
+      }
+    });
+  </script>
+
 </body>
-  </html>
+        </html>
