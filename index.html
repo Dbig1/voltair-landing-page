@@ -75,40 +75,53 @@
 input {
   padding: 0.8rem;
   border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  width: 100%;  /* Ensure inputs take up full width within the form */
-  box-sizing: border-box;  /* Ensure padding doesn't affect the width */
-      }
-    section {
-      margin-top: 2rem;
-      /* Adding mobile responsiveness for form */
-@media screen and (max-width: 480px) {
-  body {
-    padding: 1rem;
-  }
-
   form {
-    padding: 1.5rem;
-    width: 90%; /* Adjust width for smaller screens */
-  }
-
-  input, button {
-    font-size: 0.9rem;
-    padding: 0.7rem;
-  }
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ff99;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box; /* Ensures padding is accounted for in width */
 }
 
-section#volt-insight-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  padding: 2rem;
-  background: #1a1a1a;
-  border-radius: 12px;
-  margin-top: 3rem;
+form input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #333;
+  font-size: 1rem;
   width: 100%;
-  max-width: 1000px;
+  box-sizing: border-box; /* Ensures padding is accounted for in width */
+}
+
+form button {
+  background: #00ff99;
+  color: #000;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%; /* Makes button fill the width of the form */
+}
+
+form button:hover {
+  background: #00cc77;
+}
+
+form label {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #00ff99;
 }
 
 .insight-card {
