@@ -3,103 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VoltAir – Power the Future</title>
+  <title>VoltAir - Power the Future</title>
   <meta name="description" content="Join VoltAir – the future of wireless charging. Sign up now to be among the first to experience innovation without limits." />
   <meta name="author" content="VoltAir Team" />
-  <meta property="og:title" content="VoltAir – Power the Future" />
+  <meta property="og:title" content="VoltAir - Power the Future" />
   <meta property="og:description" content="Join VoltAir – the future of wireless charging. Sign up now." />
   <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
   <meta property="og:url" content="https://yourdomain.com" />
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background: #0b0b0b;
       color: #ffffff;
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
     header img {
-      width: 160px;
+      width: 150px;
       height: auto;
-      margin-bottom: 1.5rem;
-      animation: fadeInDown 1.2s ease;
+      margin-bottom: 2rem;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: 1rem;
       text-align: center;
-    }
-
-    p.lead {
-      font-size: 1.1rem;
-      text-align: center;
-      max-width: 480px;
-      margin-bottom: 2rem;
-      opacity: 0.9;
     }
 
     form {
       background: #1a1a1a;
       padding: 2rem;
-      border-radius: 14px;
-      box-shadow: 0 0 20px #00ff99;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00ff99;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       width: 100%;
-      max-width: 420px;
-      animation: fadeInUp 1.2s ease;
-    }
-
-    input, button {
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      border: none;
+      max-width: 400px;
     }
 
     input {
-      background: #f0f0f0;
-      color: #000;
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
     }
 
     button {
       background: #00ff99;
       color: #000;
+      padding: 1rem;
+      border: none;
+      font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
 
     button:hover {
       background: #00cc77;
     }
 
-    .success {
+    .success, .error {
       display: none;
       margin-top: 1rem;
-      color: #00ff99;
       font-weight: bold;
       text-align: center;
+    }
+
+    .success {
+      color: #00ff99;
+    }
+
+    .error {
+      color: #ff5050;
     }
 
     #volt-insight-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-      padding: 2rem 0;
-      background: #121212;
-      border-radius: 16px;
+      padding: 2rem;
+      background: #1a1a1a;
+      border-radius: 12px;
       margin-top: 3rem;
       width: 100%;
       max-width: 1000px;
@@ -125,95 +115,63 @@
       margin-bottom: 0.5rem;
     }
 
-    .insight-description {
-      font-size: 0.95rem;
+    .insight-text {
       color: #333;
+      font-size: 0.95rem;
     }
 
     footer {
       margin-top: 4rem;
+      color: #777;
+      font-size: 0.85rem;
       text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.6;
     }
 
-    .nova-powered {
-      margin-top: 2rem;
+    #nova-bot {
+      margin-top: 3rem;
+      font-style: italic;
+      color: #aaa;
       text-align: center;
-      font-size: 0.95rem;
-      color: #00ff99;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .nova-icon {
-      width: 40px;
-      height: 40px;
-      background: #00ff99;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      color: #000;
-      font-size: 1.2rem;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="VoltAir Logo" />
+    <img src="voltair-logo.png" alt="VoltAir Logo" loading="lazy" />
   </header>
 
-  <h1>Power the Future</h1>
-  <p class="lead">Join VoltAir and experience the revolution of wireless energy. Sign up to get early access, insider updates, and a front-row seat to innovation.</p>
+  <h1>Be First to Power the Future</h1>
 
   <form action="https://formspree.io/f/xrbpjkwo" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit">Notify Me</button>
-    <div class="success">Thanks for joining VoltAir!</div>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="tel" name="phone" placeholder="Your Phone Number" pattern="[0-9]{10,15}" title="Enter a valid phone number" required />
+    <button type="submit">Join the Waitlist</button>
+    <div class="success">Thanks for signing up! We'll keep you updated.</div>
+    <div class="error">Oops! Please check your entries.</div>
   </form>
 
   <section id="volt-insight-cards">
     <div class="insight-card">
-      <div class="insight-title">Wireless Without Limits</div>
-      <div class="insight-description">Cut the cords and experience true freedom with next-gen wireless tech.</div>
+      <div class="insight-title">Wireless Innovation</div>
+      <div class="insight-text">No more cables. Just clean, efficient energy transfer wherever you go.</div>
     </div>
     <div class="insight-card">
-      <div class="insight-title">Future-Proof Energy</div>
-      <div class="insight-description">Designed for the devices of tomorrow, VoltAir grows with your lifestyle.</div>
+      <div class="insight-title">VoltShield Security</div>
+      <div class="insight-text">Your charger knows it’s you. Owner-priority mode keeps intruders out.</div>
     </div>
     <div class="insight-card">
-      <div class="insight-title">Powered by Nova AI</div>
-      <div class="insight-description">Smart energy. Seamless delivery. Managed by Nova, your intelligent power companion.</div>
+      <div class="insight-title">Nova Bot Intelligence</div>
+      <div class="insight-text">AI-powered assistant ensures seamless control, diagnostics, and support.</div>
     </div>
   </section>
 
-  <div class="nova-powered">
-    <div class="nova-icon">N</div>
-    <div>Powered by Nova AI — Your Future Begins Here</div>
-  </div>
+  <div id="nova-bot">Nova: Fully online and optimizing your wireless future...</div>
 
   <footer>
-    &copy; 2025 VoltAir. All rights reserved.
+    &copy; 2025 VoltAir Inc. All rights reserved.
   </footer>
+
 </body>
-  </html
+  </html>
