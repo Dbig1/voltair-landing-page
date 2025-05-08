@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,160 +11,151 @@
   <meta property="og:url" content="https://yourdomain.com" />
   <link rel="icon" href="favicon.ico" />
   <style>
-    * { box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       background: #0b0b0b;
-      color: #fff;
+      color: #ffffff;
       margin: 0;
-      padding: 2rem 1rem;
+      padding: 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
+    }header img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 2rem;
+}
 
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
-    header img {
-      width: 160px;
-      height: auto;
-    }
+form {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ff99;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
 
-    h1 {
-      font-size: 2rem;
-      margin: 1rem 0;
-    }
+input {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
 
-    p {
-      font-size: 1rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-      text-align: center;
-    }
+button {
+  background: #00ff99;
+  color: #000;
+  padding: 1rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-    form {
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #00ff99;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 400px;
-    }
+button:hover {
+  background: #00cc77;
+}
 
-    input {
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1rem;
-    }
+.success, .error {
+  display: none;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
 
-    button {
-      background: #00ff99;
-      color: #000;
-      padding: 1rem;
-      border: none;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+.success {
+  color: #00ff99;
+}
 
-    button:hover {
-      background: #00cc77;
-    }
+.error {
+  color: #ff5050;
+}
 
-    .success, .error {
-      display: none;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 1rem;
-    }
+#volt-insight-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1000px;
+}
 
-    .success { color: #00ff99; }
-    .error { color: #ff5050; }
+.insight-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    #volt-insight-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-      padding: 2rem;
-      background: #1a1a1a;
-      border-radius: 12px;
-      max-width: 1000px;
-      width: 100%;
-    }
+.insight-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
 
-    .insight-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-      padding: 1.5rem;
-      transition: all 0.3s ease;
-    }
+.insight-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
 
-    .insight-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-    }
+.insight-text {
+  font-size: 1rem;
+  color: #333;
+}
 
-    .insight-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #1a1a1a;
-      margin-bottom: 0.5rem;
-    }
+#nova-bot-section {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #121212;
+  border: 2px dashed #00ff99;
+  border-radius: 12px;
+  text-align: center;
+}
 
-    .insight-text {
-      font-size: 1rem;
-      color: #333;
-    }
-
-    footer {
-      margin-top: 4rem;
-      text-align: center;
-      color: #888;
-    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="VoltAir Logo" />
     <h1>Welcome to VoltAir</h1>
-    <p>Join the wireless energy revolution. Be first in line for the future of power.</p>
-  </header>
-
-  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+  </header>  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
-    <input type="tel" name="phone" placeholder="Phone Number (Optional)" />
+    <input type="tel" name="phone" placeholder="Your Phone Number" required />
     <button type="submit">Join the Waitlist</button>
-    <div class="success">You're on the list!</div>
-    <div class="error">Something went wrong. Try again.</div>
-  </form>
-
-  <section id="volt-insight-cards">
+    <div class="success">Thank you! We'll be in touch soon.</div>
+    <div class="error">Oops! Please try again.</div>
+  </form>  <section id="volt-insight-cards">
+    <div class="insight-card">
+      <div class="insight-title">Quantum Wireless</div>
+      <div class="insight-text">Cutting-edge technology for seamless energy transfer.</div>
+    </div>
     <div class="insight-card">
       <div class="insight-title">VoltShield Security</div>
-      <div class="insight-text">Auto-authenticate and protect your device with AI-driven secure pairing.</div>
+      <div class="insight-text">Your charger. Your rules. Protected by Nova AI.</div>
     </div>
     <div class="insight-card">
-      <div class="insight-title">VoltPack Portability</div>
-      <div class="insight-text">Charge anywhere with our wireless power bank extension.</div>
+      <div class="insight-title">EcoSmart Efficiency</div>
+      <div class="insight-text">Optimized for energy-saving, eco-friendly power flow.</div>
     </div>
-    <div class="insight-card">
-      <div class="insight-title">VoltGlow Ambience</div>
-      <div class="insight-text">Enjoy ambient smart light while charging your device wirelessly.</div>
-    </div>
+  </section>  <section id="nova-bot-section">
+    <h2>Nova Bot</h2>
+    <p>Nova is your intelligent assistant, managing secure charging and device pairing with advanced AI insight.</p>
+    <button onclick="alert('Nova bot engaged!')">Activate Nova</button>
   </section>
-
-  <footer>
-    Powered by VoltAir & Nova Intelligence. All rights reserved.
-  </footer>
 </body>
-  </html
+</html>
