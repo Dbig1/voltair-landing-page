@@ -46,6 +46,7 @@
       gap: 1rem;
       width: 100%;
       max-width: 400px;
+      position: relative;
     }
 
     input {
@@ -102,6 +103,7 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
       padding: 1.5rem;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #1a1a1a;
     }
 
     .insight-card:hover {
@@ -128,6 +130,46 @@
       border: 2px dashed #00ff99;
       border-radius: 12px;
       text-align: center;
+      position: relative;
+    }
+
+    #nova-bot-prompt {
+      margin-top: 1rem;
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 1rem;
+      color: #00ff99;
+      font-family: monospace;
+      min-height: 50px;
+    }
+
+    #nova-bot-input {
+      margin-top: 1rem;
+      width: 80%;
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      color: #00ff99;
+      background: #000;
+    }
+
+    #nova-bot-send {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      background: #00ff99;
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    #nova-bot-send:hover {
+      background: #00cc77;
     }
   </style>
 </head>
@@ -137,22 +179,93 @@
     <h1>Welcome to VoltAir</h1>
   </header>
 
-  <form action="https://formspree.io/f/xrbpjkwo" method="POST">
+  <form id="voltair-form" action="https://formspree.io/f/xrbpjkwo" method="POST" novalidate>
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <input type="tel" name="phone" placeholder="Your Phone Number" />
     <button type="submit">Join the Waitlist</button>
-    <div class="success">Thank you for joining!</div>
-    <div class="error">Oops! Something went wrong.</div>
+    <div class="success" id="form-success">Thank you for joining!</div>
+    <div class="error" id="form-error">Oops! Something went wrong.</div>
   </form>
 
-  <section id="volt-insight-cards">
-    <!-- Insight cards will be injected here -->
-  </section>
+  <section id="volt-insight-cards"></section>
 
   <section id="nova-bot-section">
     <h2>Nova is listening...</h2>
     <p>Need help or have a question? Just ask.</p>
+    <div id="nova-bot-prompt"></div>
+    <input id="nova-bot-input" type="text" placeholder="Type your question here..." />
+    <button id="nova-bot-send">Send</button>
   </section>
+
+  <script>
+    // VoltAir Insight Cards
+    const insights = [
+      { title: "Multi-Layered Security", text: "Protect your enterprise with physical, network, application, and data layers." },
+      { title: "Real-Time Threat Detection", text: "Stay ahead of attacks with proactive monitoring and incident response." },
+      { title: "Scalable & Compliant", text: "Designed for enterprises of all sizes, meeting strict compliance standards." },
+      { title: "User-Centric Controls", text: "Easy-to-manage identity and access controls for your teams." }
+    ];
+
+    const container = document.getElementById("volt-insight-cards");
+
+    insights.forEach(insight => {
+      const card = document.createElement("div");
+      card.className = "insight-card";
+      card.innerHTML = `<div class="insight-title">${insight.title}</div><div class="insight-text">${insight.text}</div>`;
+      container.appendChild(card);
+    });
+
+    // Form handling with simple UX feedback
+    const form = document.getElementById("voltair-form");
+    const successMsg = document.getElementById("form-success");
+    const errorMsg = document.getElementById("form-error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      successMsg.style.display = "none";
+      errorMsg.style.display = "none";
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          successMsg.style.display = "block";
+          form.reset();
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      } catch (error) {
+        errorMsg.style.display = "block";
+      }
+    });
+
+    // Simple Nova Bot interaction
+    const novaPrompt = document.getElementById("nova-bot-prompt");
+    const novaInput = document.getElementById("nova-bot-input");
+    const novaSend = document.getElementById("nova-bot-send");
+
+    novaSend.addEventListener("click", () => {
+      const question = novaInput.value.trim();
+      if (!question) return;
+      novaPrompt.textContent = "Nova is thinking...";
+      novaInput.value = "";
+      setTimeout(() => {
+        novaPrompt.textContent = `Nova says: Sorry, I’m still learning. But we appreciate your question: "${question}"`;
+      }, 1500);
+    });
+
+    novaInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        novaSend.click();
+      }
+    });
+  </script>
 </body>
-      </html>
+</html>
+
