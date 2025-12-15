@@ -176,14 +176,17 @@
 <body>
   <header>
     <img src="logo.png" alt="VoltAir Logo" />
-    <h1>Welcome to VoltAir</h1>
+<h1>Stay Connected to VoltAir</h1>
+<p style="opacity:0.8; text-align:center;">
+  Clarity deepens through connection.
+</p>
   </header>
 
   <form id="voltair-form" action="https://formspree.io/f/xrbpjkwo" method="POST" novalidate>
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <input type="tel" name="phone" placeholder="Your Phone Number" />
-    <button type="submit">Join the Waitlist</button>
+<button type="submit">Stay Connected</button>
     <div class="success" id="form-success">Thank you for joining!</div>
     <div class="error" id="form-error">Oops! Something went wrong.</div>
   </form>
@@ -191,7 +194,8 @@
   <section id="volt-insight-cards"></section>
 
   <section id="nova-bot-section">
-    <h2>Nova is listening...</h2>
+<h2>Nova (Early Interface)</h2>
+<p>This channel will evolve. For now, it listens.</p>
     <p>Need help or have a question? Just ask.</p>
     <div id="nova-bot-prompt"></div>
     <input id="nova-bot-input" type="text" placeholder="Type your question here..." />
@@ -199,14 +203,12 @@
   </section>
 
   <script>
-    // VoltAir Insight Cards
     const insights = [
-      { title: "Multi-Layered Security", text: "Protect your enterprise with physical, network, application, and data layers." },
-      { title: "Real-Time Threat Detection", text: "Stay ahead of attacks with proactive monitoring and incident response." },
-      { title: "Scalable & Compliant", text: "Designed for enterprises of all sizes, meeting strict compliance standards." },
-      { title: "User-Centric Controls", text: "Easy-to-manage identity and access controls for your teams." }
-    ];
-
+  { title: "Signal Alignment", text: "VoltAir responds when awareness and intention align." },
+  { title: "Real-Time Insight", text: "Clarity emerges naturally, without force or urgency." },
+  { title: "Scalable Awareness", text: "Designed to grow with you, not overwhelm you." },
+  { title: "Human-Centric Intelligence", text: "Technology that listens before it acts." }
+];
     const container = document.getElementById("volt-insight-cards");
 
     insights.forEach(insight => {
