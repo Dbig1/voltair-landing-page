@@ -1,0 +1,114 @@
+voltair-supreme-vvim/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+├── config/
+│   ├── openart_config.json        # OpenArt API keys, style templates
+│   └── heygen_config.json         # HeyGen API keys, scene defaults
+│
+├── data/
+│   ├── input/                     # Raw AI outputs (predictions, heatmaps, etc.)
+│   └── output/                    # Generated visuals & video outputs
+│
+├── scripts/
+│   ├── vvimporter.py              # Load VoltAir AI predictions
+│   ├── openart_generator.py       # Generate OpenArt visuals
+│   ├── heygen_pipeline.py         # Convert OpenArt visuals → HeyGen video scenes
+│   ├── scene_editor.py            # Scene-by-scene editing interface
+│   └── batch_export.py            # Batch export videos & dashboards
+│
+├── templates/
+│   ├── styles/                    # VoltAir branding templates
+│   └── scene_presets/             # Predefined scene structures
+│
+├── dashboards/
+│   ├── index.html                  # Interactive dashboard
+│   ├── js/
+│   └── css/
+│
+└── examples/
+    ├── demo_predictions.json
+    ├── demo_openart_output/
+    └── demo_videopipeline_output/
+import json
+
+def load_predictions(file_path):
+    """Load VoltAir AI prediction JSON outputs"""
+    with open(file_path) as f:
+        data = json.load(f)
+    return data
+
+if __name__ == "__main__":
+    predictions = load_predictions("data/input/demo_predictions.json")
+    print(f"Loaded {len(predictions)} prediction entries")
+import requests
+import json
+
+from config.openart_config import OPENART_API_KEY
+
+def generate_visual(prediction, style_template):
+    url = "https://api.openart.ai/v1/generate"
+    payload = {
+        "prompt": prediction["description"],
+        "style": style_template,
+        "seed": prediction["id"]
+    }
+    headers = {"Authorization": f"Bearer {OPENART_API_KEY}"}
+    response = requests.post(url, json=payload, headers=headers)
+    return response.json()
+
+if __name__ == "__main__":
+    from vvimporter import load_predictions
+    preds = load_predictions("data/input/demo_predictions.json")
+    for p in preds[:3]:
+        result = generate_visual(p, style_template="voltair-default")
+        print("Generated visual URL:", result.get("url"))
+import requests
+from config.heygen_config import HEYGEN_API_KEY
+
+def create_scene_video(image_urls, scene_instructions, style="voltair-default"):
+    """
+    Generate a video from OpenArt images using HeyGen Video Agent
+    """
+    url = "https://api.heygen.ai/v1/video/create"
+    payload = {
+        "images": image_urls,
+        "instructions": scene_instructions,
+        "style": style
+    }
+    headers = {"Authorization": f"Bearer {HEYGEN_API_KEY}"}
+    response = requests.post(url, json=payload, headers=headers)
+    return response.json()
+
+if __name__ == "__main__":
+    sample_images = ["https://demo.openart.ai/image1.png", "https://demo.openart.ai/image2.png"]
+    instructions = ["Scene 1: show heatmap", "Scene 2: overlay human agents"]
+    result = create_scene_video(sample_images, instructions)
+    print("Video URL:", result.get("video_url"))
+def edit_scene(scene):
+    print(f"Current Scene: {scene['name']}")
+    cmd = input("Enter edit command (text/color/position/skip): ")
+    if cmd == "skip":
+        return scene
+    # Apply edit logic here...
+    print(f"Applied {cmd} changes")
+    return scene
+import os
+from heygen_pipeline import create_scene_video
+
+def export_all(scenes, output_dir="data/output/videos"):
+    os.makedirs(output_dir, exist_ok=True)
+    for i, s in enumerate(scenes):
+        result = create_scene_video(s["images"], s["instructions"])
+        video_url = result.get("video_url")
+        # Download or save link
+        print(f"Scene {i} video URL:", video_url)
+
+if __name__ == "__main__":
+    sample_scenes = [
+        {"images": ["img1.png"], "instructions": ["Scene 1: heatmap"]},
+        {"images": ["img2.png"], "instructions": ["Scene 2: overlay agents"]}
+    ]
+    export_all(sample_scenes)
+
